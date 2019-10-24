@@ -4,6 +4,7 @@
     <div class="main-container">
       <beers-list :beers="beers"></beers-list>
       <beer-detail :beer="selectedBeer"></beer-detail>
+      <favourite-beers :favourite-beers="favouriteBeers"></favourite-beers>
     </div>
   </div>
 </template>
@@ -12,6 +13,7 @@
 import { eventBus } from './main.js'
 import BeersList from './components/BeersList.vue'
 import BeerDetail from './components/BeerDetail.vue'
+import FavouriteBeers from './components/FavouriteBeers.vue'
 
 export default {
   data(){
@@ -24,7 +26,8 @@ export default {
 
   components: {
     "beers-list": BeersList,
-    "beer-detail": BeerDetail
+    "beer-detail": BeerDetail,
+    "favourite-beers": FavouriteBeers
   },
 
   mounted() {

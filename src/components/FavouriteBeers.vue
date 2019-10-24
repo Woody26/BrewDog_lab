@@ -1,7 +1,8 @@
 <template lang="html">
-  <div id="beersList">
+  <div id="favouritesList" v-if="favouriteBeers">
+    <h2>Favourite Beers</h2>
       <ul>
-        <list-item v-for="(beer, index) in beers" :beer="beer" :key="index"></list-item>
+        <list-item v-for="(favouriteBeer, index) in favouriteBeers" :beer="favouriteBeer" :key="index"></list-item>
       </ul>
   </div>
 </template>
@@ -10,7 +11,7 @@
 import ListItem from './ListItem.vue'
 export default {
   name: 'beers-list',
-  props: ['beers'],
+  props: ['favouriteBeers'],
   components: {
     "list-item": ListItem
   }

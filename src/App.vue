@@ -17,6 +17,7 @@ export default {
   data(){
     return {
       beers: [],
+      favouriteBeers: [],
       selectedBeer: null
     }
   },
@@ -32,6 +33,13 @@ export default {
     .then(beers => this.beers = beers)
 
     eventBus.$on("beer-selected", (beer) => this.selectedBeer = beer)
+    eventBus.$on("fav-beer-selected", (beer) => {
+      this.favouriteBeers.push(this.selectedBeer)
+      // console.log(beer);
+      // console.log(this.favouriteBeers);
+    })
+    // console.log(beer);
+    // console.log(favouriteBeers);
   }
 }
 </script>
